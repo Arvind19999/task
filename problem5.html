@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    #myCanvas{
+        border: 1px solid black;
+ 
+    }
+    .clicks{
+        display: inline-block;
+        padding : 10px;
+        border  : 150px;
+        cursor: pointer;
+        margin-left: 350px;
+        border-radius: 10px;
+    }
+</style>
+
+<script>
+            // window.onload =
+ function clickMe(){
+        var canvas = document.getElementById("myCanvas");
+        var ctx = canvas.getContext("2d");
+        var x = canvas.width/2;
+        console.log(canvas)
+        console.log(canvas.id)
+        console.log(x)
+        var y =5;
+        console.log(y)
+
+        var dx = 2;
+        var dy = -2;
+        draw();
+function draw(){
+    //Refresh the canvas
+ctx.clearRect(0,0,canvas.width, canvas.height);
+ctx.beginPath();
+//Here we create our green circle using the arc
+ctx.arc(x,y,10,0,Math.PI*2);
+ctx.fillStyle = "tomato";
+ctx.fill(); //fill it
+// console.log(canvas.style.x)
+ctx.closePath();
+//Here is the wall colliding conditions
+
+//Here if the value is greater than 800 that is the length of the canvas-reverse the ball
+if(x+dx>800){
+    dx = -dx;
+}
+if(x+dx<0){
+    dx = -dx
+}
+if(y+dy>600){
+    dy = -dy
+}
+if(y+dy<0){
+    dy = -dy
+}
+//To update the value
+x += dx;
+y += dy
+}
+setInterval(draw,10);
+    } 
+
+</script>
+<body bgcolor="lightblue">
+
+<canvas id="myCanvas" width="800" height="600">   
+
+</canvas>
+<br>
+<button type="button" class="clicks" onclick="clickMe()">
+Click Me
+</button>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Problem3</title>
+</head>
+<body>
+  <div id="new">
+
+  </div>
+
+  <script>
+    for(i=1;i<=16;i++){
+      var tag = document.createElement("h1");
+      var text = document.createTextNode(`${i} This is just a testing`);
+      tag.appendChild(text);
+      var element = document.getElementById("new");
+      element.appendChild(tag);
+      if((i%4) === 0){
+        tag.setAttribute("style","background-color:green;margin:0px;padding:0px");
+      }
+      else if((i%2) !== 0){
+        
+        tag.setAttribute("style","background-color:red;margin:0px;padding:0px");
+      }
+      else{
+        tag.setAttribute("style","background-color:white;margin:0px;padding:0px");
+      }
+    }  
+  </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+*{
+    margin : 0px;
+    padding : 0px;
+}
+
+.flex-container{
+    width: 100%;
+    height : auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+.flex-box{
+    width : 320px; 
+     height : 320px;
+    background-color: lightblue;
+    /* margin: 5px; */
+    text-align: center;
+    border: 1px grey solid;
+    line-height: 200px;
+    /* margin:px  */
+    /* padding: 10px; */
+}
+
